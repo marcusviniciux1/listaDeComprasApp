@@ -2,14 +2,20 @@ package br.ufjf.dcc196.marcusviniciux1.listadecompras;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+
 import android.text.TextUtils;
+
 import android.view.View;
+
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements ListaCategoriasAd
         });
         iniciarViewModel();
         iniciarRecyclerView();
+        viewModel.getTodasListasDeCategoria();
     }
 
     private void iniciarRecyclerView() {
@@ -69,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements ListaCategoriasAd
             }
         });
     }
-
 
     private void showAddDialogoCategoria(boolean paraEditar) {
         AlertDialog dialogoBuilder = new AlertDialog.Builder(this).create();
@@ -113,7 +119,11 @@ public class MainActivity extends AppCompatActivity implements ListaCategoriasAd
 
     @Override
     public void itemClick(Categoria categoria) {
+        Intent intent = new Intent(MainActivity.this, ListaDeItens.class);
+        intent.putExtra("id_categoria", categoria.uid);
+        intent.putExtra("nome_categoria", categoria.nomeCategoria);
 
+        startActivity(intent);
     }
 
     @Override

@@ -1,15 +1,17 @@
 package br.ufjf.dcc196.marcusviniciux1.listadecompras;
 
 import android.content.Context;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
@@ -26,8 +28,8 @@ public class ListaCategoriasAdapter extends RecyclerView.Adapter<ListaCategorias
         this.clickListener = clickListener;
     }
 
-    public void setListaCategoria(List<Categoria> categoryList) {
-        this.listaDeCategoria = categoryList;
+    public void setListaCategoria(List<Categoria> listaCategoria) {
+        this.listaDeCategoria = listaCategoria;
         notifyDataSetChanged();
     }
 
@@ -87,11 +89,10 @@ public class ListaCategoriasAdapter extends RecyclerView.Adapter<ListaCategorias
     }
 
     public interface HandleCategoryClick {
-        void itemClick(Categoria category);
+        void itemClick(Categoria categoria);
 
-        void removerItem(Categoria category);
+        void removerItem(Categoria categoria);
 
-        void editarItem(Categoria category);
+        void editarItem(Categoria categoria);
     }
 }
-

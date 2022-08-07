@@ -10,12 +10,13 @@ import androidx.room.RoomDatabase;
 
 public abstract class AppDatabase extends RoomDatabase {
     public abstract ListaDeComprasDAO listaDeComprasDAO();
+
     public static AppDatabase INSTANCIA;
 
     public static AppDatabase getDBinstancia(Context contexto) {
         if (INSTANCIA == null) {
             INSTANCIA = Room.databaseBuilder(contexto.getApplicationContext(),
-                    AppDatabase.class, "AppBD").
+                            AppDatabase.class, "AppBD").
                     allowMainThreadQueries().build();
         }
         return INSTANCIA;

@@ -14,13 +14,13 @@ public interface ListaDeComprasDAO {
     List<Categoria> getTodasListasDeCategorias();
 
     @Insert
-    void inserirCategoria(Categoria...categorias);
+    void inserirCategoria(Categoria... categorias);
 
     @Update
-    void atualizarCategoria(Categoria...categorias);
+    void atualizarCategoria(Categoria... categorias);
 
     @Delete
-    void deletarCategoria(Categoria...categorias);
+    void deletarCategoria(Categoria... categorias);
 
     @Query("Select * from Itens where idCategoria = :idCat")
     List<Itens> getTodasListasDeItens(int idCat);
@@ -32,6 +32,5 @@ public interface ListaDeComprasDAO {
     void atualizarItens(Itens itens);
 
     @Delete
-    void deleteItens(Itens itens);
+    void deletarItens(Itens itens);
 }
-

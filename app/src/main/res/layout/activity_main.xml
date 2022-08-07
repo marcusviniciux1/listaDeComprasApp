@@ -13,8 +13,7 @@
         android:layout_marginTop="10dp"
         android:paddingBottom="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/adicionarNovaCategoriaImageView"
@@ -23,8 +22,7 @@
         android:layout_margin="15dp"
         android:src="@drawable/ic_add_circle_black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/semCategoriaTextView"
