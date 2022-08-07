@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements ListaCategoriasAd
             categoriaInput.setText(categoriaParaEditar.nomeCategoria);
         }
 
-        criarButton.setOnClickListener(new View.OnClickListener() {
+        cancelarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialogoBuilder.dismiss();
